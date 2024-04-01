@@ -122,4 +122,20 @@ public class groupTests {
         System.out.println("Got Cookie: " + mycookie);
         //}
     }
-}
+    
+    @Test(groups = {"mobile"})
+    public void MobileOptsinChrome()
+        Map<String,String> mobileEm = new HashMap<String,String>();
+		mobileEm.put("deviceName", "iPhone XXX");
+		ChromeOptions opt = new ChromeOptions();
+		//opt.addArguments("--headless");
+		//opt.addArguments("disable-infobars");
+		//opt.addArguments("window-size=1400,1000");
+		opt.setAcceptInsecureCerts(true);
+		opt.addArguments("incognito");
+		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+		opt.setExperimentalOption("mobileEmulation",mobileEm );
+		WebDriver driver = new ChromeDriver(opt);
+		driver.get("https://expired.badssl.com");
+		System.out.println(driver.getTitle());
+    }
