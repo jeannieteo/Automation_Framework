@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="GroupSuite">
-  <test thread-count="5" name="GroupTest">
+  <test thread-count="5" name="GroupTests">
 	 <groups>
 		 <run>
-			  <include name="context_menu"></include>
+			  <include name="calendar"></include>
 			  <exclude name="regression"></exclude>
 		 </run>
 	 </groups>
    <classes>
-      <class name="SeleniumPlayground.groupTests"/>
+      <class name="SeleniumPlayground.GroupTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
